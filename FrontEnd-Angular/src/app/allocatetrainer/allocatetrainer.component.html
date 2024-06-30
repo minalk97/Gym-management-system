@@ -1,0 +1,21 @@
+
+<form [formGroup]="registerForm" class="container p-3 my-3 border "  (ngSubmit)="onSubmit()">
+    <h2>Allocate Trainer To Member</h2>
+    <div class="form-group">
+        <label for="traineremail">Select Trainer</label>
+        <select formControlName="traineremail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.traineremail.errors }" >
+            <option *ngFor="let temail of emailst" [ngValue]="temail.email">{{temail?.trainername}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="mememail">Select Member</label>
+        <select formControlName="mememail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mememail.errors }" >
+            <option *ngFor="let memail of emailsm" [ngValue]="memail.email">{{memail?.name}}</option>
+        </select>
+    </div>
+
+<div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary">Allocate</button>
+</div>
+</form>
+

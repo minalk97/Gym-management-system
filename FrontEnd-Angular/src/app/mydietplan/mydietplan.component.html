@@ -1,0 +1,25 @@
+
+<br/><br/>
+<div class="container p-3 my-3 border ">
+    
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+     <th>Date</th>
+     <th>Meal Type</th>
+     <th>Food Name</th>
+     <th>Nutrition</th>
+        </tr>
+    </thead>
+        <tr *ngFor="let data of dietplans">
+
+
+          <td><h2>{{data.date}}</h2></td>
+          <td><h2>{{data.mealid.mealtype}}</h2></td>
+          <td><h2>{{data.foodid.foodname}}</h2></td>
+          <td><h2>{{data.foodid.nutritype}}</h2></td>
+          
+        </tr>
+</table>
+<button (click)="goback()">Back</button>
+</div>

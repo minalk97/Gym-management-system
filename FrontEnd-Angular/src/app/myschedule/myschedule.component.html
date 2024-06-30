@@ -1,0 +1,24 @@
+<br/>
+<br/>
+<div class="container p-3 my-3 border ">
+    
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+     <th>Date</th>
+     <th>Exercise Name</th>
+     <th>Category Name</th>
+     <th>Sets</th>
+     <th>Time</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let data of schedules" >
+        <td><h2>{{data.date}}</h2></td>
+    <td><h2>{{data.exerciseidd.exercisename}}</h2></td>
+    <td><h2>{{data.exerciseidd.catname}}</h2></td>
+    <td><h2>{{data.sets}}</h2></td>
+    <td><h2>{{data.time}}</h2></td>
+</tr>
+</table>
+<button (click)="goback()">Back</button>
+</div>

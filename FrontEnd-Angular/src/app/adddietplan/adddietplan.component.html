@@ -1,0 +1,41 @@
+<p>Add Diet Plan</p>
+<form [formGroup]="dietplanForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="email">Enter Member's Email:</label>
+        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="date">Enter Date:</label>
+        <input type="date" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+        <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+            <div *ngIf="f.date.errors.required">Date is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="mealid">Select Meal Type: </label>
+        <select formControlName="mealid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mealid.errors }">
+          <option *ngFor="let meal of mealtypes" [ngValue]="meal.mealid">{{meal.mealtype}}</option>
+        </select>  
+        <div *ngIf="submitted && f.mealid.errors" class="invalid-feedback">
+            <div *ngIf="f.mealid.errors.required">Meal Type is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="foodid">Select Food Item Type: </label>
+        <select formControlName="foodid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.foodid.errors }">
+          <option *ngFor="let food of fooditems" [ngValue]="food.foodid">{{food.foodname}}</option>
+        </select>  
+        <div *ngIf="submitted && f.foodid.errors" class="invalid-feedback">
+            <div *ngIf="f.foodid.errors.required">Food item is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Add Schedule</button>
+    </div>
+  </form>
+
+
+

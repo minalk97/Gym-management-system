@@ -1,0 +1,23 @@
+<div class="container p-3 my-3 border ">
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Instrument Name</th>
+        <th>Instrument Cost</th>
+        <th>Purchase Date</th>
+        <th>Last Servicing Date</th>
+        <th>Repaired Part</th>
+        <th>Maintainance Duration</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let record of data">
+      <td>{{record.instrumentname}}</td>
+      <td>{{record.cost}}</td>
+      <td>{{record.purchasedate}}</td>
+      <td>{{record.lastservicingdate}}</td>
+      <td>{{record.repairedpart}}</td>
+      <td>{{record.maintainanceduration}}</td>
+    </tr>
+    </table>
+</div>
